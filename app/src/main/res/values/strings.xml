@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">ProjectHelper</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="record_id">Id</string>
+    <string name="record_date">Date</string>
+    <string name="job_location">Job Location</string>
+    <string name="invoice_list">Invoice List</string>
+    <string name="new_quote">Quote</string>
+    <string name="phone_number">Phone Number</string>
+    <string name="title_activity_main2">Main2Activity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
+
+
+</resources>
