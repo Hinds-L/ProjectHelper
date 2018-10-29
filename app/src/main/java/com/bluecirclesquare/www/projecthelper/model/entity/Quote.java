@@ -77,7 +77,7 @@ public class Quote {
 
 
     public String getQuoteDescription() {
-        
+
         return quoteDescription;
     }
 
