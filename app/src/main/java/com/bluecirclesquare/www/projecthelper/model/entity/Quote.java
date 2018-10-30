@@ -76,7 +76,7 @@ public class Quote {
     //TODO define other fields and columns
 
 
-    public String getQuoteDescription() {
+    public String getQuoteDescription(String ) {
 
         return quoteDescription;
     }

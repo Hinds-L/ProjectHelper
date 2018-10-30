@@ -10,7 +10,7 @@ public class Invoice {
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    //TODO define other fields and columns
+
 
 
     public long getId() {
@@ -24,27 +24,22 @@ public class Invoice {
 
     @ColumnInfo(name="invoice_date")
     @PrimaryKey(autoGenerate = true)
-    private int invDate;
-
-    //TODO define other fields and columns
+    private int Date;
 
 
-    public int getInvDate() {
+    public int getDate() {
 
-        return invDate;
+        return Date;
     }
 
-    public void setInvDate(int invDate) {
+    public void setDate(int date) {
 
-        this.invDate = invDate;
+        this.Date = date;
     }
 
     @ColumnInfo(name="invoice_price")
     @PrimaryKey(autoGenerate = true)
-    private invPrice;
-
-    //TODO define other fields and columns
-
+    private  invPrice;
 
     public long getInvPrice() {
         return invPrice;
@@ -55,19 +50,4 @@ public class Invoice {
         this.invPrice = invPrice;
     }
 
-    @ColumnInfo(name="invoice_id")
-    @PrimaryKey(autoGenerate = true)
-    private long id;
-
-    //TODO define other fields and columns
-
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-
-        this.id = id;
-    }
 }
