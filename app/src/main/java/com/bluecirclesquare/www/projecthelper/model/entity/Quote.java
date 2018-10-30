@@ -5,15 +5,29 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 import android.icu.math.BigDecimal;
 
+import java.util.Date;
+
 @Entity
 public class Quote {
 
-    @ColumnInfo(name="quote_id")
+    @ColumnInfo(name = "quote_id")
     @PrimaryKey(autoGenerate = true)
     private long id;
 
-    //TODO define other fields and columns
+    @ColumnInfo(name="quote_number", index= true, collate = ColumnInfo.NOCASE)
+    private String quoteNumber;
+    private String contact;
+    private long amount;
+    private String description;
+    private Date event;
 
+    public Date getEvent() {
+        return event;
+    }
+
+    public void setEvent(Date event) {
+        this.event = event;
+    }
 
     public long getId() {
         return id;
@@ -23,65 +37,36 @@ public class Quote {
         this.id = id;
     }
 
-    @ColumnInfo(name="invoice_number")
-    @PrimaryKey(autoGenerate = true)
-    private String invoiceNum;
-
-    //TODO define other fields and columns
-
-
-    public String getInvoiceNum() {
-        return invoiceNum;
+    public String getQuoteNumber() {
+        return quoteNumber;
     }
 
-    public void setInvoice(String invoiceNum) {
-        this.invoiceNum = invoiceNum;
+    public void setQuoteNumber(String quoteNumber) {
+        this.quoteNumber = quoteNumber;
     }
-
-    @ColumnInfo(name="Contact")
-    @PrimaryKey(autoGenerate = true)
-    private String contact;
-
-    //TODO define other fields and columns
-
 
     public String getContact() {
         return contact;
     }
 
     public void setContact(String contact) {
-
         this.contact = contact;
     }
 
-    @ColumnInfo(name="quote_amount")
-    @PrimaryKey(autoGenerate = true)
-    private BigDecimal quoteAmount ;
-
-    //TODO define other fields and columns
-
-
-    public BigDecimal getQuoteAmount() {
-        return quoteAmount;
+    public long getAmount() {
+        return amount;
     }
 
-    public void setId(BigDecimal quoteAmount) {
-        this.quoteAmount = quoteAmount;
+    public void setAmount(long amount) {
+        this.amount = amount;
     }
 
-    @ColumnInfo(name="quote_description")
-    @PrimaryKey(autoGenerate = true)
-    private String quoteDescription;
-
-    //TODO define other fields and columns
-
-
-    public String getQuoteDescription(String ) {
-
-        return quoteDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setQuoteDescription(String quoteDescription) {
-        this.quoteDescription = quoteDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
+

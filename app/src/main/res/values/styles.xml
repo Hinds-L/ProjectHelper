@@ -8,4 +8,8 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="fragmentTitle" parent="AppTheme">
+    <item name="text">16sp</item>
+    </style>
+
 </resources>
