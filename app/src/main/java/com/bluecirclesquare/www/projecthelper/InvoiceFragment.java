@@ -13,7 +13,7 @@ public class InvoiceFragment extends Fragment {
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
     View view = inflater.inflate(R.layout.fragment_invoice, container, false);
-    TextView textView = view.findViewById(R.id.quotes);
+    TextView textView = view.findViewById(R.id.invoice);
   return view;
   }
 

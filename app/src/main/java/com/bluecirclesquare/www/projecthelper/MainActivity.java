@@ -11,75 +11,76 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
 
-import com.bluecirclesquare.www.projecthelper.model.entity.Invoice;
-import com.bluecirclesquare.www.projecthelper.model.entity.Quote;
 
-public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener{
+public class MainActivity extends AppCompatActivity implements
+    BottomNavigationView.OnNavigationItemSelectedListener {
 
-    private TextView fragmentTitle;
-    private
+  private TextView fragmentTitle;
 
 
+  @Override
+  protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
 
+    fragmentTitle = findViewById(R.id.fragment_title);
+    BottomNavigationView navigation = findViewById(R.id.navigation);
+    navigation.setOnNavigationItemSelectedListener(this);
+    navigation.setSelectedItemId(R.id.quote);
+  }
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+  @Override
+  public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+    boolean handled = true;
+    Fragment fragment = null;
+    switch (menuItem.getItemId()) {
+      case R.id.quote:
+        fragment = new QuoteFragment();
+        break;
+      case R.id.invoice:
+        fragment = new InvoiceFragment();
+        break;
+      case R.id.jobitems:
+        fragment = new JobFragment();
+        break;
+      default:
+        handled = false;
+    }
+    if (handled) {
+      fragmentTitle.setText(menuItem.getTitle());
+      if (fragment != null) {
+        getSupportFragmentManager().beginTransaction()
+            .replace(R.id.fragment_container, fragment).commit();
+      }
 
-        fragmentTitle = findViewById(R.id.fragment_title);
-        BottomNavigationView navigation = findViewById(R.id.navigation);
-        navigation.setOnNavigationItemSelectedListener(this);
-        navigation.setSelectedItemId(R.id.quotes);
     }
 
-    @Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuitem) {
-        boolean handled = true;
-        Fragment fragment = null;
-        switch (menuItem.getItemId()) {
-            case R.id.quotes:
-                fragment = QuoteFragment();
-                break;
-            case R.id.invoice:
-                fragment = InvoiceFragment();
-                break;
-            case R.id.jobs:
-                fragment = new JobFragment();
-                break;
-            default:
-                handled =false;
-        }
-        if (handled){
-            fragmentTitle.setText(menuItem.getTitle());
-            if(fragment != null) {
-                getSupportFragmentManager().beginTransaction()
-                        .replace(R.id.fragment_container, fragment).commit();
-            }
+    return handled;
+  }
 
-        }
+  FloatingActionButton mapButton = findViewById(R.id.map_button);
 
-        return handled;
-    }
-FloatingActionButton fab = findViewById(R.id.Fab);
-    fab.setOnClickListener(new View.OnClickListener()
+//  mapButton.setOnClickListener(new View.OnClickListener(){
+//
+//    @Override
+//    public void onClick(View v){
+//      Snackbar.make(v, "Map", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+//    }
+//    });
 
-    {
-        @Override
-        public void onClick (View view){
-        Snackbar.make(view, "Map", Snackbar.LENGTH_SHORT).setAction(,null).show();
-    }
-    }
-    FloatingActionButton fab = findViewById(R.id.Fab2);
-    fab.setOnClickListener(new View.OnClickListener()
 
-    {
-        @Override
-        public void onClick (View view){
-        Snackbar.make(view, "Map", Snackbar.LENGTH_SHORT).setAction(,null).show();
-    }
-    });
 
-    }
+
+ // FloatingActionButton createEmail = findViewById(R.id.create_email);
+//    fab.setOnClickListener(new View.OnClickListener()
+//
+//  {
+//    @Override
+//    public void onClick (View view){
+//    Snackbar.make(view, "Email", Snackbar.LENGTH_LONG).setAction(, null).show();
+//  }
+//  });
+
+}
 
 

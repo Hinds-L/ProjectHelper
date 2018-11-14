@@ -16,8 +16,9 @@ public class QuoteFragment extends Fragment {
   @Override
   public View onCreateView(LayoutInflater inflater, ViewGroup container,
       Bundle savedInstanceState) {
-    FragmentManager fragmentManager = get
-        Fra
+//    FragmentManager fragmentManager = get
+//        Fra'
+    //TODO fix it
     return inflater.inflate(R.layout.fragment_quote, container, false);
 
   }

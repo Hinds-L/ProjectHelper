@@ -3,17 +3,20 @@
 
     <item
         android:id="@+id/quote"
-        android:icon="@drawable/ic_home_black_24dp"
-        android:title="@string/quote"/>
+        android:icon="@drawable/quotes"
+      android:title="@string/new_quote"
+        />
 
     <item
         android:id="@+id/invoice"
-        android:icon="@drawable/ic_dashboard_black_24dp"
-        android:title="@string/invoice" />
+        android:icon="@drawable/invoice"
+      android:title="@string/new_invoice"
+        />
 
     <item
         android:id="@+id/jobitems"
-        android:icon="@drawable/ic_notifications_black_24dp"
-        android:title="@string/jobitems" />
+        android:icon="@drawable/jobs"
+      android:title="@string/jobitems"
+      />
 
 </menu>
