@@ -12,13 +12,12 @@ import java.util.List;
 public interface JobsDao {
 
   @Insert
+  long insert (Jobs jobs);
+  @Insert
   List<Long> insert(List<Jobs> jobs);
 
-  @Query("SELECT * FROM Jobs ORDER BY event DESC")
+  @Query("SELECT * FROM Jobs ORDER BY occasion DESC")
   List<Jobs> select();
-
-  @Query("SELECT * FROM Jobs ORDER BY event DESC")
-  long getJobsId();
 
   @Update
   int update(Jobs jobs);

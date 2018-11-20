@@ -16,7 +16,8 @@ public class MainActivity extends AppCompatActivity implements
     BottomNavigationView.OnNavigationItemSelectedListener {
 
   private TextView fragmentTitle;
-
+  private FloatingActionButton mapButton;
+  private FloatingActionButton emailButton;
 
   @Override
   protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +28,27 @@ public class MainActivity extends AppCompatActivity implements
     BottomNavigationView navigation = findViewById(R.id.navigation);
     navigation.setOnNavigationItemSelectedListener(this);
     navigation.setSelectedItemId(R.id.quote);
+
+    mapButton = findViewById(R.id.map_button);
+
+    mapButton.setOnClickListener(new View.OnClickListener() {
+
+      @Override
+      public void onClick(View v) {
+        Snackbar.make(v, "Map", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+      }
+    });
+
+    emailButton = findViewById(R.id.create_email);
+    emailButton.setOnClickListener(new View.OnClickListener()
+   {
+     @Override
+     public void onClick(View view) {
+
+       Snackbar.make(view, "Email", Snackbar.LENGTH_LONG).setAction("Action", null).show();
+     }
+   }
+    );
   }
 
   @Override
@@ -58,29 +80,8 @@ public class MainActivity extends AppCompatActivity implements
     return handled;
   }
 
-  FloatingActionButton mapButton = findViewById(R.id.map_button);
-
-//  mapButton.setOnClickListener(new View.OnClickListener(){
-//
-//    @Override
-//    public void onClick(View v){
-//      Snackbar.make(v, "Map", Snackbar.LENGTH_LONG).setAction("Action", null).show();
-//    }
-//    });
-
-
-
-
- // FloatingActionButton createEmail = findViewById(R.id.create_email);
-//    fab.setOnClickListener(new View.OnClickListener()
-//
-//  {
-//    @Override
-//    public void onClick (View view){
-//    Snackbar.make(view, "Email", Snackbar.LENGTH_LONG).setAction(, null).show();
-//  }
-//  });
 
 }
+
 
 

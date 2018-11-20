@@ -9,7 +9,7 @@
 
     <item
         android:id="@+id/invoice"
-        android:icon="@drawable/invoice"
+        android:icon="@mipmap/ic_invoice"
       android:title="@string/new_invoice"
         />
 
